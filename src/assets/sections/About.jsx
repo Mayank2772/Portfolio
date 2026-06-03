@@ -45,7 +45,7 @@ const About = () => {
               I enjoy building full stack web applications using the MERN stack and exploring AI and Machine Learning concepts. I love turning ideas into real projects that are both useful and visually clean.
             </p>
             <p>
-              Over time, I've built projects like an AI Image Generation platform, a Blog website, an AQI Prediction System and a Virtual Keyboard using Hand Gesture Recognition. Along with development, I'm also improving my problem-solving skills through DSA and competitive programming.
+              Over time, I've built projects like an AI Im a Blog website, an AQI Prediction System and a Virtual Keyboard using Hand Gesture Recognition. Along with development, I'm also improving my problem-solving skills through DSA and competitive programming.
             </p>
           </div>
           <div className='glass rounded-2xl p-6 glow-border animate-fade-in animation-delay-300'>
