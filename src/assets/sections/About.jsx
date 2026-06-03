@@ -50,7 +50,7 @@ const About = () => {
           </div>
           <div className='glass rounded-2xl p-6 glow-border animate-fade-in animation-delay-300'>
             <p className='text-lg font-medium italic text-foreground'>
-              “Always learning, always building, and always curious about creating technology that makes an impact.”
+              “Always learning, always building, and always curious about creating technology that makes an impact.” 
             </p>
           </div>
         </div>
