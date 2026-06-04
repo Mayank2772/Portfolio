@@ -2,7 +2,7 @@ import { Currency } from "lucide-react";
 import React from "react";
 const experiences = [
   {
-    period: "2025 - Present",
+    period: "Present",
     role: "B.Tech CSE Student",
     company: "Thapar Institute of Engineering & Technology",
     description:
@@ -12,7 +12,7 @@ const experiences = [
   },
 
   {
-    period: "2024",
+    period: "2025",
     role: "Air Quality Prediction System",
     company: "Machine Learning Project",
     description:
