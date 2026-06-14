@@ -27,7 +27,7 @@ const projects = [
       "A responsive blogging platform built with React.js and Tailwind CSS featuring category-based blogs, clean UI, and smooth navigation. Designed to provide a modern reading experience across all devices.",
     image: "/projects/Blog-Website.png",
     tags: ["React.js", "Tailwind CSS", "JavaScript"],
-    link: "https://blog-website-chi-bice.vercel.app",
+    link: "https://mayankgarg-blog.vercel.app",
     github: "https://github.com/Mayank2772/Blog-Website",
   },
 
