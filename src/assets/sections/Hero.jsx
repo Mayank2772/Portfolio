@@ -61,7 +61,7 @@ const Hero = () => {
                 through code and
                 <br />
                 <span className="font-serif italic font-normal text-white">
-                  Aritifical Intelligence.
+                  Artifical Intelligence.
                 </span>
               </h1>
               <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-200">
