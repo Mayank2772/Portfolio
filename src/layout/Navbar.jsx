@@ -15,6 +15,10 @@ const Navbar = () => {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 40);
+
+      if (window.scrollY > 40) {
+        setIsMobileMenuOpen(false);
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -24,9 +28,27 @@ const Navbar = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
+
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 px-6 pt-6 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 pt-4 sm:pt-6 transition-all duration-500 ${
         isScrolled
           ? "opacity-0 -translate-y-8 pointer-events-none"
           : "opacity-100 translate-y-0"
@@ -34,7 +56,7 @@ const Navbar = () => {
     >
       <div className="relative max-w-7xl mx-auto h-16">
         <div className="absolute right-0 top-1/2 -translate-y-1/2 hidden md:block">
-          <a href="#contact">
+          <a href="#contact" onClick={closeMobileMenu}>
             <Button
               size="sm"
               className="
@@ -60,7 +82,8 @@ const Navbar = () => {
             top-1/2
             -translate-x-1/2
             -translate-y-1/2
-            flex
+            hidden
+            md:flex
             items-center
             px-3
             py-2
@@ -117,6 +140,7 @@ const Navbar = () => {
         </nav>
 
         <button
+          type="button"
           className="
             absolute
             right-0
@@ -137,18 +161,23 @@ const Navbar = () => {
             hover:bg-primary/10
             hover:text-primary
             transition-all
+            duration-300
           "
           onClick={() => setIsMobileMenuOpen((prev) => !prev)}
-          aria-label="Toggle navigation menu"
+          aria-label={
+            isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"
+          }
+          aria-expanded={isMobileMenuOpen}
         >
           {isMobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
         </button>
       </div>
 
       {isMobileMenuOpen && (
-        <div className="md:hidden mt-3">
+        <div className="md:hidden mt-3 w-full">
           <div
             className="
+              w-full
               max-w-md
               ml-auto
               rounded-2xl
@@ -157,14 +186,15 @@ const Navbar = () => {
               bg-background/80
               backdrop-blur-xl
               shadow-[0_15px_50px_rgba(0,0,0,0.3)]
-              p-4
+              p-3
+              sm:p-4
               animate-fade-in
             "
           >
             <div className="flex flex-col gap-1">
               <a
                 href="#home"
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={closeMobileMenu}
                 className="
                   px-4
                   py-3
@@ -182,12 +212,13 @@ const Navbar = () => {
                 <a
                   key={link.href}
                   href={link.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={closeMobileMenu}
                   className="
                     px-4
                     py-3
                     rounded-xl
                     text-base
+                    font-medium
                     text-white/70
                     hover:text-primary
                     hover:bg-primary/10
@@ -200,7 +231,7 @@ const Navbar = () => {
               ))}
 
               <div className="pt-3 mt-2 border-t border-white/10">
-                <a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>
+                <a href="#contact" onClick={closeMobileMenu} className="block">
                   <Button className="w-full">Contact Me</Button>
                 </a>
               </div>
