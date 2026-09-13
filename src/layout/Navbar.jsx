@@ -48,15 +48,35 @@ const Navbar = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 pt-4 sm:pt-6 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 px-5 sm:px-6 pt-5 sm:pt-6 transition-all duration-500 ${
         isScrolled
           ? "opacity-0 -translate-y-8 pointer-events-none"
           : "opacity-100 translate-y-0"
       }`}
     >
-      <div className="relative max-w-7xl mx-auto h-16">
+      <div className="relative max-w-7xl mx-auto h-12 md:h-16">
+        <a
+          href="#home"
+          className="
+            absolute
+            left-0
+            top-1/2
+            -translate-y-1/2
+            text-2xl
+            font-bold
+            tracking-tight
+            text-white
+            transition-transform
+            duration-300
+            hover:scale-105
+            md:hidden
+          "
+        >
+          MG<span className="text-primary">.</span>
+        </a>
+
         <div className="absolute right-0 top-1/2 -translate-y-1/2 hidden md:block">
-          <a href="#contact" onClick={closeMobileMenu}>
+          <a href="#contact">
             <Button
               size="sm"
               className="
@@ -174,11 +194,10 @@ const Navbar = () => {
       </div>
 
       {isMobileMenuOpen && (
-        <div className="md:hidden mt-3 w-full">
+        <div className="md:hidden mt-3">
           <div
             className="
-              w-full
-              max-w-md
+              max-w-sm
               ml-auto
               rounded-2xl
               border
@@ -187,27 +206,10 @@ const Navbar = () => {
               backdrop-blur-xl
               shadow-[0_15px_50px_rgba(0,0,0,0.3)]
               p-3
-              sm:p-4
               animate-fade-in
             "
           >
             <div className="flex flex-col gap-1">
-              <a
-                href="#home"
-                onClick={closeMobileMenu}
-                className="
-                  px-4
-                  py-3
-                  text-xl
-                  font-bold
-                  text-white
-                "
-              >
-                MG<span className="text-primary">.</span>
-              </a>
-
-              <div className="h-px bg-white/10 my-1" />
-
               {navLinks.map((link) => (
                 <a
                   key={link.href}

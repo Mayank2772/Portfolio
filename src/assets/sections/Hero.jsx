@@ -27,9 +27,6 @@ const Hero = () => {
         bg-background
       "
     >
-      {/* =====================================================
-          PRISM BACKGROUND
-      ====================================================== */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <div className="absolute inset-0 w-full h-full">
           <Prism
@@ -46,9 +43,6 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* =====================================================
-          DARK GRADIENT OVERLAY
-      ====================================================== */}
       <div
         className="
           absolute
@@ -61,7 +55,6 @@ const Hero = () => {
         "
       />
 
-      {/* Side vignette */}
       <div
         className="
           absolute
@@ -71,9 +64,6 @@ const Hero = () => {
         "
       />
 
-      {/* =====================================================
-          HERO CONTENT
-      ====================================================== */}
       <div
         className="
           relative
@@ -95,50 +85,91 @@ const Hero = () => {
             min-h-[calc(100vh-150px)]
           "
         >
-          {/* =================================================
-              LEFT — TEXT
-          ================================================== */}
           <div className="space-y-8">
-            {/* Badge */}
             <div className="animate-fade-in">
-              <span
+              <div
                 className="
                   inline-flex
-                  items-center
-                  gap-2
-                  px-4
-                  py-2
-                  rounded-full
+                  flex-col
+                  sm:flex-row
+                  items-stretch
+                  sm:items-center
+                  rounded-3xl
+                  sm:rounded-full
                   glass
                   border
                   border-white/10
                   backdrop-blur-xl
-                  text-sm
-                  text-primary
-                  shadow-[0_0_25px_hsl(var(--primary)/0.08)]
+                  bg-white/[0.03]
+                  shadow-[0_0_30px_hsl(var(--primary)/0.06)]
+                  overflow-hidden
                 "
               >
-                <span
+                <div
                   className="
-                    w-2
-                    h-2
-                    rounded-full
-                    bg-primary
-                    animate-pulse
-                    shadow-[0_0_10px_hsl(var(--primary))]
+                    flex
+                    items-center
+                    gap-3
+                    px-5
+                    py-3
+                    text-sm
+                    text-primary
+                    whitespace-nowrap
                   "
-                />
-                Computer Science Student
-                <span>+</span>
-                Full Stack Developer
-                <span>+</span>
-                ML Explorer
-              </span>
+                >
+                  <span
+                    className="
+                      w-2
+                      h-2
+                      rounded-full
+                      bg-primary
+                      shadow-[0_0_10px_hsl(var(--primary))]
+                      flex-shrink-0
+                    "
+                  />
+                  <span>Computer Science Student</span>
+                </div>
+
+                <div className="hidden sm:block w-px my-3 bg-white/10" />
+                <div className="sm:hidden h-px mx-5 bg-white/10" />
+
+                <div
+                  className="
+                    flex
+                    items-center
+                    gap-3
+                    px-5
+                    py-3
+                    text-sm
+                    text-primary
+                    whitespace-nowrap
+                  "
+                >
+                  <span className="text-primary/60 text-base">⌘</span>
+                  <span>Full Stack Developer</span>
+                </div>
+
+                <div className="hidden sm:block w-px my-3 bg-white/10" />
+                <div className="sm:hidden h-px mx-5 bg-white/10" />
+
+                <div
+                  className="
+                    flex
+                    items-center
+                    gap-3
+                    px-5
+                    py-3
+                    text-sm
+                    text-primary
+                    whitespace-nowrap
+                  "
+                >
+                  <span className="text-primary/60">✦</span>
+                  <span>ML Explorer</span>
+                </div>
+              </div>
             </div>
 
-            {/* =================================================
-                HEADLINE
-            ================================================== */}
             <div className="space-y-3">
               <h1
                 className="
@@ -154,14 +185,7 @@ const Hero = () => {
                 "
               >
                 Exploring{" "}
-                <span
-                  className="
-                    text-primary
-                    glow-text
-                  "
-                >
-                  the future
-                </span>
+                <span className="text-primary glow-text">the future</span>
                 <br />
                 through code
                 <br />
@@ -177,7 +201,6 @@ const Hero = () => {
                 </span>
               </h1>
 
-              {/* Description */}
               <p
                 className="
                   text-lg
@@ -195,9 +218,6 @@ const Hero = () => {
               </p>
             </div>
 
-            {/* =================================================
-                BUTTONS
-            ================================================== */}
             <div
               className="
                 flex
@@ -222,9 +242,6 @@ const Hero = () => {
               </a>
             </div>
 
-            {/* =================================================
-                SOCIALS
-            ================================================== */}
             <div
               className="
                 flex
@@ -290,9 +307,6 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* =================================================
-              RIGHT — LARGE PROFILE IMAGE
-          ================================================== */}
           <div
             className="
               relative
@@ -303,7 +317,6 @@ const Hero = () => {
               animation-delay-300
             "
           >
-            {/* Large ambient glow */}
             <div
               className="
                 absolute
@@ -316,7 +329,6 @@ const Hero = () => {
               "
             />
 
-            {/* Image container */}
             <div
               className="
                 relative
@@ -324,7 +336,6 @@ const Hero = () => {
                 max-w-md
               "
             >
-              {/* Glass frame */}
               <div
                 className="
                   relative
@@ -350,7 +361,6 @@ const Hero = () => {
                   "
                 />
 
-                {/* Image bottom gradient */}
                 <div
                   className="
                     absolute
@@ -366,9 +376,6 @@ const Hero = () => {
                 />
               </div>
 
-              {/* =================================================
-                  3RD YEAR BADGE
-              ================================================== */}
               <div
                 className="
                   absolute
@@ -390,9 +397,6 @@ const Hero = () => {
                 <div className="text-xs text-muted-foreground">CS Student</div>
               </div>
 
-              {/* =================================================
-                  OPEN TO OPPORTUNITIES
-              ================================================== */}
               <div
                 className="
                   absolute
@@ -430,9 +434,6 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* =====================================================
-            TECHNOLOGIES
-        ====================================================== */}
         <div
           className="
             mt-16
